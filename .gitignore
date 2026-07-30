@@ -11,6 +11,10 @@
 # deps
 node_modules/
 
+# build
+dist/
+coverage/
+
 # env
 .env
 .env.production
