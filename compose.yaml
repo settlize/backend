@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: settlize-db
+    environment:
+      POSTGRES_USER: settlize
+      POSTGRES_PASSWORD: settlize
+      POSTGRES_DB: settlize
+    ports:
+      - "5432:5432"
+    volumes:
+      - settlize-pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U settlize -d settlize"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+volumes:
+  settlize-pgdata:
