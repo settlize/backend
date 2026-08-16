@@ -22,7 +22,10 @@
     "test:watch": "vitest",
     "db:up": "podman compose up -d",
     "db:down": "podman compose down",
-    "db:reset": "podman compose down -v && podman compose up -d"
+    "db:reset": "podman compose down -v && podman compose up -d",
+    "db:migrate": "drizzle-kit migrate",
+    "db:generate": "drizzle-kit generate",
+    "db:seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.0.12",
